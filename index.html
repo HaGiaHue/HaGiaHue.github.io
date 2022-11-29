@@ -42,7 +42,7 @@
             continuousWorld: false,
             worldCopyJump: false, 
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[10.078995549648482,105.66811336147762],[10.748574488141251,106.95709640280789]]);
+        }).fitBounds([[10.08464625047011,105.67717548898274],[10.75426185827824,106.96619784281397]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -104,10 +104,12 @@
                         <td>' + (feature.properties['DienTich'] !== null ? autolinker.link(feature.properties['DienTich'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['MatDoDanSo'] !== null ? autolinker.link(feature.properties['MatDoDanSo'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">MatDoDanSo</th>\
+                        <td>' + (feature.properties['MatDoDanSo'] !== null ? autolinker.link(feature.properties['MatDoDanSo'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Dien_Tich'] !== null ? autolinker.link(feature.properties['Dien_Tich'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">Dien_Tich</th>\
+                        <td>' + (feature.properties['Dien_Tich'] !== null ? autolinker.link(feature.properties['Dien_Tich'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Matdodan_1</th>\
@@ -118,8 +120,9 @@
         }
 
         function style_RG_TIENGIANG_0_0(feature) {
-            if (feature.properties['Matdodan_1'] >= 196.000000 && feature.properties['Matdodan_1'] <= 286.600000 ) {
-                return {
+            switch(String(feature.properties['Matdodan_1'])) {
+                case '196':
+                    return {
                 pane: 'pane_RG_TIENGIANG_0',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -132,9 +135,9 @@
                 fillColor: 'rgba(215,25,28,1.0)',
                 interactive: true,
             }
-            }
-            if (feature.properties['Matdodan_1'] >= 286.600000 && feature.properties['Matdodan_1'] <= 596.000000 ) {
-                return {
+                    break;
+                case '277':
+                    return {
                 pane: 'pane_RG_TIENGIANG_0',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -144,12 +147,57 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(253,174,97,1.0)',
+                fillColor: 'rgba(230,85,56,1.0)',
                 interactive: true,
             }
+                    break;
+                case '289':
+                    return {
+                pane: 'pane_RG_TIENGIANG_0',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(245,144,83,1.0)',
+                interactive: true,
             }
-            if (feature.properties['Matdodan_1'] >= 596.000000 && feature.properties['Matdodan_1'] <= 735.200000 ) {
-                return {
+                    break;
+                case '491':
+                    return {
+                pane: 'pane_RG_TIENGIANG_0',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(253,190,116,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '666':
+                    return {
+                pane: 'pane_RG_TIENGIANG_0',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(254,223,153,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '702':
+                    return {
                 pane: 'pane_RG_TIENGIANG_0',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -162,9 +210,9 @@
                 fillColor: 'rgba(255,255,191,1.0)',
                 interactive: true,
             }
-            }
-            if (feature.properties['Matdodan_1'] >= 735.200000 && feature.properties['Matdodan_1'] <= 1414.400000 ) {
-                return {
+                    break;
+                case '785':
+                    return {
                 pane: 'pane_RG_TIENGIANG_0',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -174,12 +222,57 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(171,221,164,1.0)',
+                fillColor: 'rgba(221,241,180,1.0)',
                 interactive: true,
             }
+                    break;
+                case '1013':
+                    return {
+                pane: 'pane_RG_TIENGIANG_0',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(188,228,169,1.0)',
+                interactive: true,
             }
-            if (feature.properties['Matdodan_1'] >= 1414.400000 && feature.properties['Matdodan_1'] <= 4655.000000 ) {
-                return {
+                    break;
+                case '3020':
+                    return {
+                pane: 'pane_RG_TIENGIANG_0',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(145,203,168,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '4655':
+                    return {
+                pane: 'pane_RG_TIENGIANG_0',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(94,167,177,1.0)',
+                interactive: true,
+            }
+                    break;
+                default:
+                    return {
                 pane: 'pane_RG_TIENGIANG_0',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -192,6 +285,7 @@
                 fillColor: 'rgba(43,131,186,1.0)',
                 interactive: true,
             }
+                    break;
             }
         }
         map.createPane('pane_RG_TIENGIANG_0');
